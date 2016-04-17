@@ -1,6 +1,24 @@
 <?php
+include("frames/config.php");
+$wrong=0;
+if(isset($_POST['username'])&&isset($_POST['password'])){
+$username=$_POST['username'];
+$password=$_POST['password'];
+if($query=mysqli_query($link,"SELECT Username FROM login_admin WHERE Username='".$username."' AND Password='".$password."'")){
+if(mysqli_num_rows($query)==1)
+{
+    header("Location:frames/db.html");
+}
+    else
+    {
+        $wrong=1;
+    }
+}
+}
+
 
 ?>
+       
 <!DOCTYPE html>
 <html>
 
@@ -18,9 +36,14 @@
             </div>
             <h5 class="border"><strong>to Exam management system</strong></h5>
             <div class="form-elements">
-                <form>
-                    <input type="text" class="form-control" placeholder="johndoe7" />
-                    <input type="password" class="form-control" placeholder="Mt" />
+                <form method="post">
+                    <span style="color:red"><?php if($wrong==1){echo "Username and Password didn't match.";}?></span>
+                    <input name="username" type="text" class="form-control" placeholder="johndoe7" />
+                    <input name="password" type="password" class="form-control" placeholder="Mt" />
+                    
+                         
+                       
+        
                     <button class="btn">Submit</button>
                 </form>
             </div>
