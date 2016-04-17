@@ -1,0 +1,26 @@
+.header {
+    background-color: #691a99;
+    border-top-left-radius: 9px;
+    color: white;
+    padding: 30px;
+    margin-top: 30%;
+}
+
+.border {
+    background-color: #7a1ea1;
+    padding: 10px;
+    padding-left: 30px;
+    color: aliceblue;
+    margin-top: -1px;
+}
+
+.form-elements {
+    background-color: #F5F5F5;
+    margin-top: -10px;
+    padding: 30px;
+}
+
+.form-control {
+    margin-bottom: 30px;
+    border-radius: 0px;
+}
